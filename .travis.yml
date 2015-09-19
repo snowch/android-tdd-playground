@@ -9,6 +9,11 @@ android:
     - build-tools-19.0.0
 
 before_script:
+  # Build sync-android-p2p
+  - git clone https://github.com/snowch/sync-android-p2p
+  - cd sync-android-p2p
+  - ./gradlew install
+  
   # Create and start emulator
   - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
   - emulator -avd test -no-skin -no-audio -no-window &
