@@ -1,7 +1,7 @@
 buildscript {
   repositories {
     mavenCentral()
-    mavenRepo url: 'https://raw.githubusercontent.com/snowch/sync-android-p2p/master/repository/'
+    mavenRepo url: 'https://githubcom/snowch/sync-android-p2p/raw/master/repository/'
   }
     
   dependencies {
