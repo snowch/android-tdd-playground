@@ -22,18 +22,19 @@ public class MainActivity extends FragmentActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    File path = getApplicationContext().getDir("datastores", MODE_PRIVATE);
-    DatastoreManager manager = new DatastoreManager(path.getAbsolutePath());
-
-    Datastore ds = manager.openDatastore("mydb");
-    ds.close();
-
-    Component component = new Component();
-    component.getServers().add(Protocol.HTTP, 8182);
-    component.getDefaultHost().attachDefault(HttpListener.class);
 
     try {
+        File path = getApplicationContext().getDir("datastores", MODE_PRIVATE);
+        DatastoreManager manager = new DatastoreManager(path.getAbsolutePath());
+
+        Datastore ds = manager.openDatastore("mydb");
+        ds.close();
+
+        Component component = new Component();
+        component.getServers().add(Protocol.HTTP, 8182);
+        component.getDefaultHost().attachDefault(HttpListener.class);
         component.start();
+
     } catch (Exception e) {
         throw new RuntimeException(e);
     }
