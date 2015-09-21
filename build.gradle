@@ -54,7 +54,11 @@ android {
 
   testVariants.all { variant ->
     variant.connectedInstrumentTest.doLast {
-        commandLine "./connect_to_device.sh"
+        def p = ['./connect_to_device.sh'].execute()
+        p.consumeProcessOutput()
+        p.waitFor()
+        println p.err.text
+        println p.text
     }
   }
 }
