@@ -1,7 +1,6 @@
 buildscript {
   repositories {
     mavenCentral()
-    mavenRepo url: 'https://github.com/snowch/sync-android-p2p/raw/master/repository/'
   }
     
   dependencies {
@@ -14,6 +13,11 @@ apply plugin: 'android'
 android {
   compileSdkVersion 19
   buildToolsVersion '19.0.0'
+
+  repositories {
+    mavenCentral()
+    mavenRepo url: 'https://github.com/snowch/sync-android-p2p/raw/master/repository/'
+  }
   
   sourceSets {
     main {
