@@ -15,8 +15,12 @@ android {
   buildToolsVersion '19.0.0'
 
   repositories {
+    mavenLocal()
     mavenCentral()
-    mavenRepo url: 'https://github.com/snowch/sync-android-p2p/raw/master/repository/'
+    mavenRepo {
+      url: "http://cloudant.github.io/cloudant-sync-eap/repository/" 
+      url: 'https://github.com/snowch/sync-android-p2p/raw/master/repository/'
+      }
   }
   
   sourceSets {
