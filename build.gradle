@@ -1,10 +1,8 @@
 buildscript {
   repositories {
     mavenCentral()
+    mavenRepo url: 'https://raw.githubusercontent.com/snowch/sync-android-p2p/master/repository/'
   }
-  maven {
-    url 'https://raw.githubusercontent.com/snowch/sync-android-p2p/master/repository/'
-  }   
     
   dependencies {
     classpath 'com.android.tools.build:gradle:0.10+'
