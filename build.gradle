@@ -56,11 +56,7 @@ android {
     println 'XXXXXXX: debugging'
     variant.connectedInstrumentTest.doLast {
         println 'YYYYYY: debugging'
-        def p = ['./connect_to_device.sh'].execute()
-        p.consumeProcessOutput()
-        p.waitFor()
-        println p.err.text
-        println p.text
+        println './connect_to_device.sh'.execute().text
     }
   }
 }
