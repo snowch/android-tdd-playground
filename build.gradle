@@ -57,6 +57,7 @@ android {
     variant.connectedInstrumentTest.doLast {
         println 'YYYYYY: debugging'
         println './connect_to_device.sh'.execute().text
+        println 'ZZZZZZ: debugging'
     }
   }
 }
