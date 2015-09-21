@@ -5,6 +5,16 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.cloudant.p2p.listener.HttpListener;
+import com.cloudant.sync.datastore.Datastore;
+import com.cloudant.sync.datastore.DatastoreManager;
+
+import org.restlet.Component;
+import org.restlet.data.Protocol;
+
+import java.io.File;
+
+
 public class MainActivity extends FragmentActivity {
 
   @Override
