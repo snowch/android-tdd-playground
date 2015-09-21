@@ -17,8 +17,9 @@ android {
   repositories {
     mavenLocal()
     mavenCentral()
-    mavenRepo url: "http://cloudant.github.io/cloudant-sync-eap/repository/" 
-    mavenRepo url: 'https://github.com/snowch/sync-android-p2p/raw/master/repository/'
+    maven { url "http://maven.restlet.org" }
+    maven { url "http://cloudant.github.io/cloudant-sync-eap/repository/" }
+    maven { url 'https://github.com/snowch/sync-android-p2p/raw/master/repository/' }
   }
   
   sourceSets {
