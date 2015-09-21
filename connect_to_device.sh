@@ -2,6 +2,14 @@
 
 set -x
 
+ANDROID_TARGET=android-19  
+ANDROID_ABI=armeabi-v7a
+
+echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
+emulator -avd test -no-skin -no-audio -no-window &
+adb wait-for-device
+adb shell input keyevent 82 &
+
 find /home/travis/build/ -name "*.apk"
 
 adb devices -l
@@ -18,8 +26,6 @@ else
     adb shell input keyevent 26 # wakeup
     adb shell input touchscreen swipe 930 380 1080 380 # unlock
 fi
-
-adb shell input keyevent 82 # old unlock
 
 adb get-state
 
