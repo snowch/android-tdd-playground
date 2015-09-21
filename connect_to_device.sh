@@ -4,7 +4,7 @@ set -x
 
 find /home/travis/build/ -name "*.apk"
 
-adb devices list
+adb devices -l
 
 adb shell pm list packages 
 
