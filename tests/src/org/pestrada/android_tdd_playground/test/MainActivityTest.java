@@ -30,6 +30,8 @@ public class MainActivityTest extends
     TouchUtils.clickView(this, button);
     TextView view = (TextView) mainActivity.findViewById(R.id.textView1);
     assertEquals("new text", view.getText().toString());
+
+    assertEquals(true, false);  // force test to fail to verify CI is running tests
   }
 
 }
