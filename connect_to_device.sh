@@ -4,7 +4,11 @@ set -x
 
 find /home/travis/build/ -name "*.apk"
 
+adb shell pm list packages 
+
 adb install /home/travis/build/snowch/android-tdd-playground/build/apk/android-tdd-playground-debug-unaligned.apk
+
+adb shell pm list packages 
 
 adb shell am start -a android.intent.action.MAIN -n org.pestrada.android_tdd_playground/.MainActivity
 
