@@ -21,6 +21,7 @@ fi
 
 adb shell input keyevent 82 # old unlock
 
+adb get-state
 
 adb shell pm list packages 
 
