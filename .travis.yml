@@ -15,4 +15,4 @@ before_script:
   - adb wait-for-device
   - adb shell input keyevent 82 &
 
-script: adb shell netcfg && ./gradlew connectedAndroidTest -x uninstallAll -PtestSize=small --info  || (adb logcat -d && echo "TESTS FAILED" && exit  1)
+script: ./gradlew connectedAndroidTest -x uninstallAll && curl http://$(adb shell netcfg):8182
