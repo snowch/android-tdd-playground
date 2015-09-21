@@ -25,6 +25,7 @@ android {
   packagingOptions {
      exclude 'META-INF/services/org.restlet.engine.ServerHelper'
      exclude 'META-INF/LICENSE.txt'
+     exclude 'META-INF/NOTICE.txt'
   }
   
   sourceSets {
