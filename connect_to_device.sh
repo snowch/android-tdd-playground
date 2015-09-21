@@ -4,6 +4,8 @@ set -x
 
 find /home/travis/build/ -name "*.apk"
 
+adb devices list
+
 adb shell pm list packages 
 
 adb install /home/travis/build/snowch/android-tdd-playground/build/apk/android-tdd-playground-debug-unaligned.apk
