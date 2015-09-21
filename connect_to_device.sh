@@ -15,7 +15,10 @@ else
     echo "Screen is already on."
     echo "Turning off."
     adb shell input keyevent 26 # sleep
+    adb shell input keyevent 26 # wakeup
+    adb shell input touchscreen swipe 930 380 1080 380 # unlock
 fi
+
 
 adb shell pm list packages 
 
