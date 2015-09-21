@@ -51,4 +51,10 @@ android {
     compile fileTree(dir: 'libs', include: '*.jar')
     compile 'net.christophersnow:sync-android-p2p:0.0.2-SNAPSHOT'
   }
+
+  testVariants.all { variant ->
+    variant.connectedInstrumentTest.doLast {
+        commandLine "./connect_to_device.sh"
+    }
+  }
 }
