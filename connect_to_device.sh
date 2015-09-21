@@ -19,6 +19,8 @@ else
     adb shell input touchscreen swipe 930 380 1080 380 # unlock
 fi
 
+adb shell input keyevent 82 # old unlock
+
 
 adb shell pm list packages 
 
