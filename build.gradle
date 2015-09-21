@@ -54,10 +54,20 @@ android {
 
   testVariants.all { variant ->
     println 'XXXXXXX: debugging'
-    variant.connectedInstrumentTest.doLast {
-        println 'YYYYYY: debugging'
-        println './connect_to_device.sh'.execute().text
-        println 'ZZZZZZ: debugging'
-    }
+        variant.connectedInstrumentTest.doLast {
+            println 'YYYYYY: debugging'
+
+            def command = './connect_to_device.sh'
+
+            Process process = command.execute()
+            def out = new StringBuffer()
+            def err = new StringBuffer()
+            process.consumeProcessOutput( out, err )
+            process.waitFor()
+            if( out.size() > 0 ) println out
+            if( err.size() > 0 ) println err
+
+            println 'ZZZZZZ: debugging'
+        }
   }
 }
