@@ -22,9 +22,10 @@ android {
     maven { url 'https://github.com/snowch/sync-android-p2p/raw/master/repository/' }
   }
   
-	packagingOptions {
-	  exclude 'META-INF/services/org.restlet.engine.ServerHelper'
-	}
+  packagingOptions {
+     exclude 'META-INF/services/org.restlet.engine.ServerHelper'
+     exclude 'META-INF/LICENSE.txt'
+  }
   
   sourceSets {
     main {
